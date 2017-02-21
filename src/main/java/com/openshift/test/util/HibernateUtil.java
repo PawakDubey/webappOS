@@ -1,5 +1,6 @@
 package com.openshift.test.util;
 
+import java.io.File;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -13,7 +14,8 @@ public class HibernateUtil {
 		try {
 			System.out.println("Inside static initializer block");
 			// Create the SessionFactory from hibernate.cfg.xml
-			Configuration config = new Configuration().configure();
+			File configFile = new File("\hibernate.cfg.xml");
+			Configuration config = new Configuration().configure(configFile);
 			sessionFactory = config.buildSessionFactory();
 		} catch (Throwable ex) {
 			// Make sure you log the exception, as it might be swallowed
