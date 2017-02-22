@@ -14,7 +14,7 @@ public class HibernateUtil {
 		try {
 			System.out.println("Inside static initializer block");
 			// Create the SessionFactory from hibernate.cfg.xml
-			File configFile = new File();
+			//File configFile = new File();
 			Configuration config = new Configuration().configure();
 			sessionFactory = config.buildSessionFactory();
 		} catch (Throwable ex) {
